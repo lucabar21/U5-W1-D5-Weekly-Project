@@ -3,6 +3,11 @@ include_once __DIR__ . "/../includes/initial.php";
 include_once __DIR__ . "/../includes/init.php";
 include_once __DIR__ . "/../classes/book.php";
 
+if (!isset($_SESSION['user'])) {
+    header("Location: /U5-W1-D5%20Weekly%20Project/login.php");
+    exit;
+}
+
 $bookManager = new Book($pdo);
 
 $books = $bookManager->getAllBooks();
