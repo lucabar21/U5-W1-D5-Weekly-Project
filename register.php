@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $userId = $userManager->addUser($username, $email, $password);
 
-    header("Location: /U5-W1-D5%20Weekly%20Project/user/view.php?id=$userId");
+    header("Location: /U5-W1-D5%20Weekly%20Project/user/view.php");
     exit;
 }
 include_once __DIR__ . "/includes/initial.php";

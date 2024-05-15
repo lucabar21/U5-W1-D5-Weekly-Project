@@ -9,9 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($user) {
         if ($user['role'] == 'admin') {
+            $_SESSION['user'] = $user;
             header('Location: /U5-W1-D5%20Weekly%20Project/admin/backoffice.php');
         } else {
-            header("Location: /U5-W1-D5%20Weekly%20Project/user/view.php?id={$user['id']}");
+            header("Location: /U5-W1-D5%20Weekly%20Project/user/view.php");
         }
         exit;
     } else {

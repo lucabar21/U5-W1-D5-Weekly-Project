@@ -3,6 +3,12 @@ include_once __DIR__ . "/../includes/initial.php";
 include_once __DIR__ . "/../includes/init.php";
 include_once __DIR__ . "/../classes/book.php";
 
+
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+    header("Location: /U5-W1-D5%20Weekly%20Project/user/view.php");
+    exit;
+}
+
 $bookManager = new Book($pdo);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_book'])) {
